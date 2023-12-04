@@ -20,6 +20,9 @@ function logar(event) {
     // a função then é executada logo após o final da requisição
     .then(function (response) {
       console.log(response);
+
+      localStorage.setItem('idUsuario', response.data.id);
+
       alert("Usuário logado com sucesso!");
     })
     //   a função catch é executada casa ocorra qualquer tipo de erro na requisição
@@ -27,3 +30,5 @@ function logar(event) {
       console.log(error);
     });
 }
+
+
