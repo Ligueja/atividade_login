@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Login</title>
+</head>
+
+<body>
+
+    <h1>Login</h1>
+
+    <form id="form" onsubmit="logar(event)">
+
+        <fieldset>
+            <legend>Login</legend>
+            <label for="email">E-mail:</label>
+            <input type="text" name="email" id="email" value="" required>
+
+            <label for="senha">Senha:</label>
+            <input type="text" name="senha" id="senha" value="" required>
+            <br>
+            <br>
+            <button class="button" type="submit">Login</button>
+            <button class="button" type="reset">Cadastre-se</button>
+
+        </fieldset>
+
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./login.js"></script>
+</body>
+
+</html>
