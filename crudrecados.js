@@ -23,15 +23,3 @@ const instance = axios.create({
         console.log(error);
       });
   }
-
-
-  //   try {
-//     const response = instance.post(`/usuario/${idUsuario}/recados/`, {
-//       titulo,
-//       descricao
-//     })
-//     carregarRecados()
-//     console.log(response)
-//   } catch (error) {
-//     console.log(error)
-//   }

@@ -7,28 +7,42 @@ const instance = axios.create({
 
 const formulario = document.getElementById("form");
 
-function logar(event) {
-  event.preventDefault();
-  const email = event.srcElement.email.value;
-  const senha = event.srcElement.senha.value;
+async function logar(evento) {
+  evento.preventDefault();
+  const email = evento.srcElement.email.value;
+  const senha = evento.srcElement.senha.value;
 
-  instance
-    .post(`/usuarios/login`, {
+  try {
+    const response = await instance.post(`/usuarios/login`, {
       email,
       senha,
-    })
-    // a função then é executada logo após o final da requisição
-    .then(function (response) {
-      console.log(response);
-
-      localStorage.setItem('idUsuario', response.data.id);
-
-      alert("Usuário logado com sucesso!");
-    })
-    //   a função catch é executada casa ocorra qualquer tipo de erro na requisição
-    .catch(function (error) {
-      console.log(error);
     });
+
+    console.log(response);
+    
+    localStorage.setItem("idUsuario", idUsuario);
+    location.href = "/crudrecados.html";
+  } catch (error) {
+    console.log(error);
+    alert("Erro ao realizar o login!");
+  }
 }
 
 
+
+
+//   instance
+//     .post(`/usuarios/login`, {
+//       email,
+//       senha,
+//     })
+//     .then(function (response) {
+//       console.log(response);
+//       localStorage.setItem("idUsuario", response.idUsuario)
+//       location.href = "/crudrecados.html";
+//     })
+//     .catch(function (error) {
+//       console.log(error);
+//       alert("Erro ao realizar o login!");
+//     });
+// }
